@@ -1,6 +1,12 @@
 # Fraction
 c++ type Fraction. Is a c++ type that can handle integer fractions using prime number factorization. There is an example-class of Fraction-use in the inversion of a 3x3-matrix. 
 
+To build project and run basic example:
+>> make example
+
+To build entire project and run all tests:
+>> make tests
+
 ## Source code
 ```
 void basicExample() {
@@ -41,3 +47,4 @@ i = 50(h-1) = -93/2
 (double) i = -46.5
 Primes destroyed
 ```
+

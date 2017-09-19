@@ -4,20 +4,11 @@
 
 using namespace std;
 
-void runAllTests() {
-	try {
-		test::runOne();
-	}catch(FractionError &e) {
-		cout << "error = " << e << endl;
-	}
-}
-
 void basicExample() {
 	Prime *prm = Prime::getInstance();
 	prm->setHighestIndex(100);
 	cout << "100th prime = " << (*prm)[99] << endl;
 		// Fraction can factorize the first 100 primes
-
 
 	Fraction f = 5;
 	f /= 7;
