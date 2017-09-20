@@ -1,11 +1,12 @@
 CC = g++
 
 OBJPATH = obj/
-OBJFLAGS = -c -std=c++11 -o
+OBJFLAGS = -c -std=c++11 -Wall -Wextra -o
 EXEFILE = fraction
 TESTFILE = testfile
 
 example:
+	rm -f $(OBJPATH)test*.o
 	make fraction
 	make -s $(OBJPATH)main.o
 	
@@ -42,8 +43,9 @@ matrix:
 
 $(OBJPATH)matrix.o: src/matrix.cpp
 	$(CC) $(OBJFLAGS) $(OBJPATH)matrix.o src/matrix.cpp 
-
+ 
 tests:
+	rm -f $(OBJPATH)main.o
 	make fraction 
 	make matrix
 	make -s $(OBJPATH)test.o

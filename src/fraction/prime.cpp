@@ -131,6 +131,27 @@ slong Prime::getIndexFromPrime(ulong primeNumber) const
 	return static_cast<slong>(startIndex);
 }
 
+slong Prime::getIndexFromPrime2(ulong primeNumber) const
+{
+	// https://en.wikipedia.org/wiki/Prime-counting_function
+	// f(x) = int(2 -> x) {dy / ln (y) } = the logarithmic integral ~= x / ln(x)
+	// prime density = f'(x) = 1 / ln(x)
+	if (primeNumber > highestPrime)
+		return -1;
+
+	if (primeNumber < 20)
+	{
+		slong index = 0;
+		while(primes[index] < primeNumber)
+			index++;
+		return index;
+	}
+
+	double startIndex = primeNumber * log(static_cast<double>(primeNumber));
+	// TODO: fixa senare
+	return static_cast<slong>(startIndex);
+}
+
 ulong Prime::getHighestIndex() const {
 	return this->highestIndex;
 }

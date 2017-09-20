@@ -1,4 +1,3 @@
 Debug
 *.prm
-obj/*.o
 *.exe

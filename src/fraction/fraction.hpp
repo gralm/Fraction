@@ -6,7 +6,7 @@
 #include <vector>
 #include <cmath>
 #include <limits>
-#include <cstdint>
+#include <stdint.h>
 
 typedef unsigned long long 	ulong;
 typedef long long			slong;
@@ -49,6 +49,7 @@ public:
 	ulong operator[](slong index) const;
 
 	slong getIndexFromPrime(ulong primeNumber) const;
+	slong getIndexFromPrime2(ulong primeNumber) const;
 	ulong getHighestIndex() const;
 	void print() const;
 	void saveAs(const std::string &filename) const;

@@ -76,7 +76,8 @@ namespace test {
 		for (slong i = 1; i<=10; i++)
 			frac *= 2*i;
 
-		if (frac.getNumeratorAsUlong() != (ulong) 3715891200) {
+		ulong compareVal = 3715891200;
+		if (frac.getNumeratorAsUlong() != compareVal) {
 			output = "20!! != 3715891200";
 			return false;
 		}

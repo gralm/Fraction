@@ -288,7 +288,7 @@ Fraction::operator slong() const {
 		throw FractionError(FractionError::CAST_OVERFLOW, "slong()", "cast overflow in slong()");
 	}
 	ulong result = n/d;
-	if (result > numeric_limits<slong>::max()) {
+	if (result > numeric_limits<ulong>::max()) {
 		//return (slong) getDouble();
 		throw FractionError(FractionError::CAST_OVERFLOW, "slong()", "cast overflow in slong()");
 	}
@@ -776,7 +776,7 @@ FractionComparisonResult Fraction::comparison(slong val) const {
 	// for undefined, infinite and -infinite Fractions should return same results as double
 FractionComparisonResult Fraction::comparison(const Fraction &frac) const {
 	if (state == Undefined || frac.state == Undefined)
-		return FractionComparisonResult::Uncomparable;
+		return Uncomparable;
 
 	if (state == Infinite) {
 		return (frac.state == Infinite && positive == frac.positive)? Equal: (positive? MoreThan: LessThan);
